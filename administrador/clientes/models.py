@@ -62,7 +62,7 @@ class Cliente(models.Model):
     
     TRATAMIENTO_IMPOSITIVO = (
         ('monotributista','Monotributista'),
-        ('responsable_inscripto','Responsable Inscripto'),
+        ('Responsable Inscripto','Responsable Inscripto'),
         ('consumidor_final','Consumidor Final'),
         ('iva_exento','IVA exento'),
     )
