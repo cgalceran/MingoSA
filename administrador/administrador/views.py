@@ -16,7 +16,7 @@ def Login(request):
                 login(request, user)
                 return HttpResponseRedirect(next)
             else:
-                return HttpResponse("Inactive user.")
+                return HttpResponse("Este usuario esta inactivo")
         else:
             return HttpResponseRedirect(settings.LOGIN_URL)
 
@@ -29,3 +29,6 @@ def Logout(request):
 @login_required(login_url='/login/')
 def Home(request):
     return render(request, "pages/index2.html", {})
+
+
+

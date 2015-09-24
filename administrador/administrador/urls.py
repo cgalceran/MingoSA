@@ -17,13 +17,13 @@ from django.conf.urls import include, url, patterns
 from django.contrib import admin
 from django.views.generic import TemplateView, RedirectView
 from clientes import views
-from clientes import urls as urls_clientes
+from clientes import urls 
 from . import views
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', RedirectView.as_view(url='home')),
-    url(r'^clientes/', include(urls_clientes)),
+    url(r'^clientes/', include('clientes.urls')),
     url(r'^crear/', TemplateView.as_view(template_name='pages/forms.html')),
     url(r'^login/$', views.Login),
     url(r'^logout/$', views.Logout),
