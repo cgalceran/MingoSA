@@ -172,7 +172,7 @@
                 </div>
                 
                 <div class="col-xs-6 text-center"> 
-                    <a href="/clientes/new/">
+                    <a href="{% url 'clientes:cliente_new' %}">
                             <button type="button" class="btn btn-success btn-circle btn-lg" style="margin-top: 35px; margin-bottom: 20px;" >
                                 <i class="fa fa-plus"></i>
                      </button>
@@ -208,8 +208,8 @@
                                         <tr class="odd gradeX">
                                              
                                             <td>{{ clientes.Nombre }}  
-                                            <a href="{% url 'cliente_edit' clientes.id %}" style="font-size: 10px;">Editar</a>
-                                            <a href="{% url 'cliente_delete' clientes.id %}" style="font-size: 10px;">Borrar</a>
+                                            <a href="{% url 'clientes:cliente_edit' clientes.id %}" style="font-size: 10px;">Editar</a>
+                                            <a href="{% url 'clientes:cliente_delete' clientes.id %}" style="font-size: 10px;">Borrar</a>
                                             </td>
                                             <td>{{ clientes.RazonSocial }}</td>
                                             <td>{{ clientes.tratamientoimpositivo }}</td>
@@ -224,8 +224,6 @@
                         
                             </div>
                             <!-- /.table-responsive -->
-                            
-            
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->

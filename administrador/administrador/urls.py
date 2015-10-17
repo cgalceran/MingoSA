@@ -23,7 +23,7 @@ from . import views
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', RedirectView.as_view(url='home')),
-    url(r'^clientes/', include('clientes.urls')),
+    url(r'^clientes/', include('clientes.urls', namespace='clientes')),
     url(r'^crear/', TemplateView.as_view(template_name='pages/forms.html')),
     url(r'^login/$', views.Login),
     url(r'^logout/$', views.Logout),

@@ -1,0 +1,270 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Mingo SA</title>
+    <link rel="icon" type="image/png" href="{% static 'startbootstrap-sb-admin-2/favicomatic/favicon.ico' %}"/>
+    <!-- Bootstrap Core CSS -->
+    
+    <link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    
+    <link href="{% static 'metisMenu/dist/metisMenu.min.css' %}" rel="stylesheet">
+    <!-- DataTables CSS -->
+    
+    <link href="{% static 'datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css' %}" rel="stylesheet">
+    
+    <!-- DataTables Responsive CSS -->
+    
+    <link href="{% static 'datatables-responsive/css/dataTables.responsive.css' %}" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    
+    <link href="{% static 'startbootstrap-sb-admin-2/dist/css/sb-admin-2.css' %}" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    
+    <link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/home/">
+                    <img src="{% static 'startbootstrap-sb-admin-2/logo/logomingotransparente.png' %}">
+               
+                    </a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                 {% if user.is_authenticated %}
+                <p class="text-muted"> Bienvenido, {{ user.first_name }}.</p>
+                    {% endif %}
+                </li>
+                
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> Comentario de Gerencia
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Ver Todos los Alertas</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile </a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="/logout/"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Buscar...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="/home/"><i class="fa fa-dashboard fa-fw"></i> Panel de Control</a>
+                        </li>
+                        
+                            <!-- /.nav-second-level -->
+                    
+                        <li>
+                            <a href="/clientes"><i class="fa fa-group fa-fw"></i> Clientes</a>
+                        </li>
+                        <li>
+                            <a href="/proveedores"><i class="fa fa-truck fa-fw"></i> Proveedores</a>
+                        </li>
+                        <li>
+                            <a href="/productos"><i class="fa fa-th-list fa-fw"></i> Productos</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Ejemplos para usar<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="blank.html">Pagina en Blanco</a>
+                                </li>
+                                <li>
+                                    <a href="login.html">Pagina de Logueo</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+
+                <div class="col-xs-6">
+                    <h1 class="page-header">Clientes</h1> 
+                </div>
+                
+                <div class="col-xs-6 text-center"> 
+                    <a href="/crear/">
+                            <button type="button" class="btn btn-success btn-circle btn-lg" style="margin-top: 35px; margin-bottom: 20px;" >
+                                <i class="fa fa-plus"></i>
+                     </button>
+                   
+                    </a>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Base de datos de Clientes
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="dataTable_wrapper">
+            
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre y Apellido</th>
+                                            <th>Razon Social</th>
+                                            <th>Tratamiento impositivo</th>
+                                        </tr>
+                                    </thead>
+                                    
+                                    <tbody>
+                                        
+                                    
+                                        {% for clientes in object_list %}
+                                        <tr class="odd gradeX">
+                                             
+                                            <td>{{ clientes.Nombre }}:  
+                                            <a href="{% url "cliente_edit" cliente.id %}">{{ clientes.RazonSocial }}</a>
+                                            <a href="{% url "cliente_delete" cliente.id %}">delete</a>
+                                            </td>
+                                            <td>{{ clientes.RazonSocial }}</td>
+                                            <td>{{ clientes.tratamientoimpositivo }}</td>
+                                            
+                                        </tr>
+                                        {% endfor %}
+                                
+                                    
+                                    </tbody>
+                                                         
+                                </table>
+                        
+                            </div>
+                            <!-- /.table-responsive -->
+                            
+            
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="{% static 'jquery/dist/jquery.min.js' %}"></script> 
+
+
+    <!-- Bootstrap Core JavaScript -->
+    
+    <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    
+    <!-- Metis Menu Plugin JavaScript -->
+     
+    <script src="{% static 'metisMenu/dist/metisMenu.min.js' %}"></script>
+    
+    <!-- DataTables JavaScript -->
+    
+    <script src="{% static 'datatables/media/js/jquery.dataTables.min.js' %}"></script>
+    
+    <script src="{% static 'datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js' %}"></script>
+    
+    <!-- Custom Theme JavaScript -->  
+
+    <script src="{% static 'startbootstrap-sb-admin-2/dist/js/sb-admin-2.js' %}"></script>
+    
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+                responsive: true
+        });
+    });
+    </script>
+
+</body>
+
+</html>
